@@ -14,7 +14,10 @@ usersRouter
             console.log('User:', user)
             res.json(user)
         })
-        .catch(next)
+            .catch(e => {
+                console.log(e)
+                next()
+        })
     })
     //register new user
     .post(jsonBodyParser, (req, res, next) => {
